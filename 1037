@@ -1,0 +1,33 @@
+#include<stdio.h>
+void HB(char a[], char b[], int sz1, int sz2)
+{
+	int i,j=0;
+	for (i = sz1; i < sz1 + sz2; i++)
+	{
+		a[i] = b[j];
+		j++;
+	}
+}
+int main()
+{
+	char a[100];
+	char b[100];
+	int ch = 0;
+	int sz1 = 0, sz2 = 0;
+	while ((ch = getchar()) != '\n')
+	{
+		a[sz1] = ch;
+		sz1++;
+	}
+	while ((ch = getchar()) != '\n')
+	{
+		b[sz2] = ch;
+		sz2++;
+	}
+	HB(a, b, sz1, sz2);
+	for (int i = 0; i < sz1 + sz2; i++)
+	{
+		printf("%c", a[i]);
+	}
+	return 0;
+}
